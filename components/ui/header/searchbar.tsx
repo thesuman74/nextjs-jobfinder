@@ -1,6 +1,6 @@
 export function SearchBar() {
   return (
-    <div className="w-full  grid-cols-4 grid bg-white shadow-lg items-center px-5 py-2">
+    <div className="w-full  grid-cols-4 grid bg-white shadow-sm items-center px-5 py-2">
       <div className="flex space-x-4 items-center pl-10">
         <img
           className="w-12 h-12 rounded-full"

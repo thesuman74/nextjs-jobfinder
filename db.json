@@ -1,0 +1,90 @@
+{
+  "popularvacancies": [
+    { "id": 1, "name": "Surgeon", "vacancies": 4555 },
+    { "id": 2, "name": "Software Engineer", "vacancies": 3000 },
+    { "id": 3, "name": "Data Scientist", "vacancies": 2500 },
+    { "id": 4, "name": "Nurse", "vacancies": 4000 },
+    { "id": 5, "name": "Teacher", "vacancies": 3500 },
+    { "id": 6, "name": "Accountant", "vacancies": 2000 },
+    { "id": 7, "name": "Marketing Manager", "vacancies": 1800 },
+    { "id": 8, "name": "Electrician", "vacancies": 3200 },
+    { "id": 9, "name": "Mechanical Engineer", "vacancies": 2700 },
+    { "id": 10, "name": "Graphic Designer", "vacancies": 2300 },
+    { "id": 11, "name": "Chef", "vacancies": 4200 },
+    { "id": 12, "name": "Architect", "vacancies": 2800 }
+  ],
+  "featuredjobs": [
+    {
+      "id": 1,
+      "post": "Technical Support",
+      "hours": "Part time",
+      "salary": 40000,
+      "company": "Google Inc.",
+      "openposition": 352
+    },
+    {
+      "id": 2,
+      "post": "Software Engineer",
+      "hours": "Full time",
+      "salary": 100000,
+      "company": "Microsoft Corporation",
+      "openposition": 500
+    },
+    {
+      "id": 3,
+      "post": "Data Scientist",
+      "hours": "Full time",
+      "salary": 120000,
+      "company": "Amazon.com Inc.",
+      "openposition": 200
+    },
+    {
+      "id": 4,
+      "post": "Nurse",
+      "hours": "Part time",
+      "salary": 60000,
+      "company": "Mayo Clinic",
+      "openposition": 1000
+    },
+    {
+      "id": 5,
+      "post": "Teacher",
+      "hours": "Full time",
+      "salary": 70000,
+      "company": "Harvard University",
+      "openposition": 300
+    },
+    {
+      "id": 6,
+      "post": "Accountant",
+      "hours": "Full time",
+      "salary": 80000,
+      "company": "Pricewater house Coopers",
+      "openposition": 150
+    },
+    {
+      "id": 7,
+      "post": "Marketing Manager",
+      "hours": "Full time",
+      "salary": 90000,
+      "company": "Coca-Cola Company",
+      "openposition": 450
+    },
+    {
+      "id": 8,
+      "post": "Electrician",
+      "hours": "Full time",
+      "salary": 70000,
+      "company": "General Electric",
+      "openposition": 200
+    },
+    {
+      "id": 9,
+      "post": "Mechanical Engineer",
+      "hours": "Full time",
+      "salary": 100000,
+      "company": "Boeing Company",
+      "openposition": 300
+    }
+  ]
+}
