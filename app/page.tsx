@@ -9,13 +9,17 @@ import {
   PopularSection,
 } from "@/components/ui/popularSection";
 import FeaturedJob from "@/components/ui/featuredJob";
+import Divider from "@/components/ui/divider";
 
 export default function Home() {
   return (
     <div className=" container ">
       <HeroSection />
+      <Divider />
       <PopularSection />
       <PopularCategories />
+      <Divider />
+
       <FeaturedJob />
 
       {/* <Button variant="outline">Button</Button> */}

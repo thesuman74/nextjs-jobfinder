@@ -1,11 +1,11 @@
 import { FeaturedJobsType } from "@/lib/type";
-import { Annoyed } from "lucide-react";
+import { Annoyed, Heart } from "lucide-react";
 import React from "react";
 
 const FeaturedCard = ({ jobs }: { jobs: FeaturedJobsType }) => {
   return (
     <div
-      className="m-3 max-w-sm min-w-60 flex-1 flex-col rounded-lg border bg-white p-2 shadow-sm"
+      className="m-3 max-w-sm min-w-60 flex-1 flex-col rounded-lg border bg-white p-2 shadow-sm hover:shadow-lg"
       key={jobs.id}
     >
       <div className="space-y-2">
@@ -34,7 +34,7 @@ const FeaturedCard = ({ jobs }: { jobs: FeaturedJobsType }) => {
             </p>
           </div>
           <div className="h-5 w-5 ">
-            <Annoyed color="#4784e6" />
+            <Heart className="hover:fill-red-500" color="#6345f7" />
           </div>
         </div>
       </div>

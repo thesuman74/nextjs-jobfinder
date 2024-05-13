@@ -10,7 +10,7 @@ export function PopularSection() {
   const { popularvacancies }: { popularvacancies: Item[] } = data;
 
   return (
-    <section className="mx-5" id="most-popular-vacancies">
+    <section className="mx-5" id="most-popular-vacancies my-5">
       <div className="container max-w-screen-lg px-5 md:mx-auto my-5 flex flex-col justify-center gap-10 py-5">
         <div className="ml-3">
           <h1 className="text-3xl font-normal ">Popular vacancies</h1>
@@ -39,7 +39,7 @@ export function PopularCategories() {
     <section className="mx-5" id="most-popular-categories">
       <div className="container max-w-screen-lg px-5 md:mx-auto my-5 flex flex-col justify-center gap-10 py-5">
         <div className="ml-3 flex justify-between">
-          <h1 className="text-3xl font-normal">Popular vacancies</h1>
+          <h1 className="text-3xl font-normal">Popular Categories</h1>
           <button className="border px-4 py-1 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white ">
             View All
           </button>
