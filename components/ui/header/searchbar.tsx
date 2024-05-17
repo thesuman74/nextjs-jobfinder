@@ -1,6 +1,6 @@
 export function SearchBar() {
   return (
-    <div className="w-full  grid-cols-4 grid bg-white shadow-sm items-center px-5 py-2">
+    <div className="w-full   grid-cols-4 grid bg-white shadow-sm items-center px-5 py-2">
       <div className="flex space-x-4 items-center pl-10">
         <img
           className="w-12 h-12 rounded-full"
@@ -9,7 +9,11 @@ export function SearchBar() {
         <h1 className="text-xl font-medium">Job Pilot</h1>
       </div>
 
-      <label className="relative block col-span-2 mx-5 ">
+      <label className="relative  col-span-2 mx-5 flex ">
+        <button className=" absolute  -right-1  border flex  px-4 py-2 rounded-lg bg-blue-600 text-white hover:text-blue-600 hover:bg-white">
+          Search
+        </button>
+
         <span className="sr-only">Search</span>
         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
           <svg className="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"></svg>
@@ -21,14 +25,15 @@ export function SearchBar() {
           name="search"
         />
       </label>
-
-      <div className="space-x-5">
-        <button className="border px-4 py-1 rounded-md text-blue-600 font-normal hover:bg-blue-600 hover:text-white">
-          Sign In
-        </button>
-        <button className="border px-4 py-1 rounded-lg bg-blue-600 text-white hover:text-blue-600 hover:bg-white">
-          Post a Job
-        </button>
+      <div className="flex md:flex-row ">
+        <div className="space-x-5 flex  ">
+          <button className="border px-4  py-1 rounded-md text-blue-600 font-normal hover:bg-blue-600 hover:text-white ">
+            Sign In
+          </button>
+          <button className="border flex  px-4 py-1 rounded-lg bg-blue-600 text-white hover:text-blue-600 hover:bg-white">
+            Post a Job
+          </button>
+        </div>
       </div>
     </div>
   );

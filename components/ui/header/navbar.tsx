@@ -55,26 +55,26 @@ function NavBar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 <a
-                  href="#"
-                  className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  href="/"
+                  className=" text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   aria-current="page"
                 >
-                  Dashboard
+                  Home
                 </a>
                 <a
-                  href="#"
+                  href="/findjob"
                   className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
-                  Team
+                  Find Job
                 </a>
                 <a
-                  href="#"
+                  href="/form"
                   className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
-                  Projects
+                  Form
                 </a>
                 <a
-                  href="#"
+                  href="/job"
                   className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Calendar

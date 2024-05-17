@@ -37,10 +37,10 @@ export default function HeroSection() {
 function Cards() {
   return (
     <div className=" container mx-auto grid max-w-screen-lg grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
-      <CardLayout number={1213515} title={"surjon"} />
-      <CardLayout number={1213515} title={"surjon"} />
-      <CardLayout number={1213515} title={"surjon"} />
-      <CardLayout number={1213515} title={"surjon"} />
+      <CardLayout number={1213515} title={"Job "} />
+      <CardLayout number={3515} title={"Companies"} />
+      <CardLayout number={13515} title={"Candidates"} />
+      <CardLayout number={1213} title={"New Jobs"} />
     </div>
   );
 }

@@ -1,13 +1,14 @@
 import data from "@/db.json";
+import { PopularCategoriesTypes, PopularSectionTypes } from "@/lib/type";
 
-interface Item {
-  id: number;
-  name: string;
-  vacancies: number;
-}
+export async function PopularSection() {
+  // const { popularvacancies }: { popularvacancies: Item[] } = data;
 
-export function PopularSection() {
-  const { popularvacancies }: { popularvacancies: Item[] } = data;
+  const sectionRes = await fetch("http://localhost:8000/popularvacancies", {
+    next: { revalidate: 10 },
+  });
+  const sectionResData = await sectionRes.json();
+  // console.log(data);
 
   return (
     <section className="mx-5" id="most-popular-vacancies my-5">
@@ -16,7 +17,7 @@ export function PopularSection() {
           <h1 className="text-3xl font-normal ">Popular vacancies</h1>
         </div>
         <div className="grid grid-cols-3 gap-3 ">
-          {popularvacancies.map((item) => {
+          {sectionResData.map((item: PopularSectionTypes) => {
             return (
               <div className="bg-white " key={item.id}>
                 <h2 className="font-medium text-black">{item.name}</h2>
@@ -32,8 +33,12 @@ export function PopularSection() {
   );
 }
 
-export function PopularCategories() {
-  const { popularvacancies }: { popularvacancies: Item[] } = data;
+export async function PopularCategories() {
+  const category_res = await fetch("http://localhost:8000/popularcategories", {
+    next: { revalidate: 10 },
+  });
+  const category_res_data = await category_res.json();
+  // console.log(data);
 
   return (
     <section className="mx-5" id="most-popular-categories">
@@ -45,7 +50,7 @@ export function PopularCategories() {
           </button>
         </div>
         <div className="grid grid-cols-3 gap-3 ">
-          {popularvacancies.map((item) => {
+          {category_res_data.map((item: PopularCategoriesTypes) => {
             return (
               <div
                 className="flex space-x-2 rounded-md bg-white items-center"

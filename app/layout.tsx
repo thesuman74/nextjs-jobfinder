@@ -23,7 +23,7 @@ export default function RootLayout({
         <NavBar />
         <SearchBar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
