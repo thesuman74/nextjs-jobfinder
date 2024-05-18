@@ -34,3 +34,40 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Submitting form data
+
+1. Create a form with name field and action and pass a function in action field
+
+```html
+<form action="{FormAction}">
+  <input type="text" name="name" />
+</form>
+```
+
+2. Create a function to accept form values and pass formdata with the interface of type _FormData_ , For example
+
+```tsx
+const FormAction = async (formData: FormData) => {};
+```
+
+3. use variables to store the formData and another variable to send them to json
+
+```tsx
+const name = formData.get("name");
+const vacancies = Number(formData.get("vacancies")) || 0;
+```
+
+4. use fetch with method as POST and in body pass the datas as string to store in local endpoint i.e db.json
+
+```tsx
+const res = await fetch("http://localhost:8000/popularvacancies", {
+  method: "POST",
+  body: JSON.stringify(datas),
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+```
+
+- Note : start the json server with **json-server --watch db.json --port 8000** before entering/accessing data

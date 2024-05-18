@@ -1,11 +1,11 @@
 "use client";
-import { PopularVacanciesType } from "@/lib/type";
 import React, { useState } from "react";
 
 export default async function AddForm(formData: FormData) {
   const FormAction = async (formData: FormData) => {
     const name = formData.get("name");
     const vacancies = Number(formData.get("vacancies")) || 0;
+    console.log(`${name} ${vacancies}`);
 
     if (isNaN(vacancies)) {
       console.error("Invalid vacancies value");

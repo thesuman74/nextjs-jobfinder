@@ -59,9 +59,13 @@
       "id": "12",
       "name": "Architect",
       "vacancies": 2800
+    },
+    {
+      "id": "d118",
+      "name": "Suman Adhikari ",
+      "vacancies": 123
     }
   ],
-
   "popularcategories": [
     {
       "id": "1",
@@ -226,37 +230,37 @@
   ],
   "TopCompanies": [
     {
-      "id": 1,
+      "id": "1",
       "company": "Company A",
       "location": "Dhaka, Bangladesh",
       "open_position": 3
     },
     {
-      "id": 2,
+      "id": "2",
       "company": "Company B",
       "location": "New York, USA",
       "open_position": 5
     },
     {
-      "id": 3,
+      "id": "3",
       "company": "Company C",
       "location": "London, UK",
       "open_position": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "company": "Company C",
       "location": "London, UK",
       "open_position": 2
     },
     {
-      "id": 5,
+      "id": "5",
       "company": "Company D",
       "location": "London, UK",
       "open_position": 2
     },
     {
-      "id": 6,
+      "id": "6",
       "company": "Company E",
       "location": "London, UK",
       "open_position": 2
