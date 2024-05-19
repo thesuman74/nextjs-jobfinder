@@ -15,7 +15,7 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
     } else {
       params.delete("query");
     }
-    replace(`http://localhost:8001/popularvacancies?${params.toString()}`); // Redirect to results page with query
+    replace(`/search?${params.toString()}`); // Redirect to search page with query
   }, 500);
 
   return (

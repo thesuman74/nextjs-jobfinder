@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 
 interface DataItem {
@@ -8,37 +6,53 @@ interface DataItem {
   profession: string;
 }
 
-export default function Home() {
-  const [query, setQuery] = useState<string>("");
-  const [results, setResults] = useState<DataItem[]>([]);
-
-  const handleSearch = async () => {
-    try {
-      const response = await fetch(`/api/search?query=${query}`);
-      const data: DataItem[] = await response.json();
-      setResults(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
+export default function Searchpage({
+  searchParams,
+}: {
+  searchParams: { name: string };
+}) {
+  // const [results, setResults] = useState<DataItem[]>([]);
   return (
     <div>
       <h1>Search</h1>
-      <input
+      {/* <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by name or profession"
-      />
-      <button onClick={handleSearch}>Search</button>
+      /> */}
+      {/* <button onClick={handleSearch}>Search</button> */}
+      <HandleSearch name={searchParams.name} />
+    </div>
+  );
+}
+const HandleSearch = async ({ name }: { name: string }) => {
+  try {
+    console.log("I am in handle search");
+    const response = await fetch(`/api/search?query=${name}`, {
+      method: "GET",
+    });
+    console.log("I am in handle search", response);
+
+    const data: DataItem[] = await response.json();
+    console.log("I am in handle search", data);
+
+    // setResults(data);
+    return (
       <ul>
-        {results.map((result) => (
+        {data.map((result) => (
           <li key={result.id}>
             {result.name} - {result.profession}
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
+    );
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return (
+      <ul>
+        <li>data not found</li>
+      </ul>
+    );
+  }
+};
