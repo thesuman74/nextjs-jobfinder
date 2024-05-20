@@ -1,6 +1,6 @@
 import data from "@/db.json";
 import { FeaturedJobsType } from "@/lib/type";
-import FeaturedCard from "../../ui/cards/FeaturedCard";
+import SearchCard from "../../ui/cards/FeaturedCard";
 
 export default async function FeaturedJob() {
   // const { featuredjobs }: { featuredjobs: FeaturedJobsType[] } = data; to fetch data directly from db.json
@@ -19,7 +19,7 @@ export default async function FeaturedJob() {
 
         <div className="flex flex-wrap justify-between gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
           {featureResData.map((item: FeaturedJobsType) => (
-            <FeaturedCard jobs={item} key={item.id} />
+            <SearchCard jobs={item} key={item.id} />
           ))}
         </div>
       </div>

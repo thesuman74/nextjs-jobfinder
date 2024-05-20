@@ -1,21 +1,15 @@
 "use client";
 
-import FeaturedCard from "@/components/ui/cards/FeaturedCard";
-import { FeaturedJobsType } from "@/lib/type";
+import SearchCard from "@/components/ui/cards/SearchCard";
+import { PopularVacanciesType } from "@/lib/type";
 import { useState, useEffect } from "react";
-
-interface DataItem {
-  id: number;
-  name: string;
-  profession: string;
-}
 
 export default function Searchpage({
   searchParams,
 }: {
   searchParams: { name: string };
 }) {
-  const [results, setResults] = useState<DataItem[]>([]);
+  const [results, setResults] = useState<PopularVacanciesType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +19,6 @@ export default function Searchpage({
             searchParams.name
           )}`
         );
-        // console.log("response", response.json());
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -50,28 +43,13 @@ export default function Searchpage({
   }, [searchParams.name]);
 
   return (
-    // <div>
-    //   <h1>Search</h1>
-    //   <ul>
-    //     {results.length > 0 ? (
-    //       results.map((result) => (
-    //         <li key={result.id}>
-    //           {result.name} - {result.profession}
-    //         </li>
-    //       ))
-    //     ) : (
-    //       <li>No results found</li>
-    //     )}
-    //   </ul>
-    // </div>
     <section>
-      <div className="container  mx-auto max-w-screen-lg my-5 ">
+      <div className="container mx-auto max-w-screen-lg my-5">
         <h1 className="my-4 ml-3 text-3xl font-normal">Featured Jobs</h1>
-
         <div className="flex flex-wrap justify-between gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-          {/* {results.map((item: FeaturedJobsType) => (
-            <FeaturedCard jobs={item} key={item.id} />
-          ))} */}
+          {results.map((item) => (
+            <SearchCard jobs={item} key={item.id} />
+          ))}
         </div>
       </div>
     </section>

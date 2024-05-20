@@ -1,6 +1,8 @@
 "use client";
 
+import { Router } from "lucide-react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import router from "next/router";
 import { useDebouncedCallback } from "use-debounce";
 
 export function SearchBar({ placeholder }: { placeholder: string }) {
@@ -8,14 +10,16 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
   const pathname = usePathname();
   const { replace } = useRouter(); // Use push for redirecting to the results page
 
+  const router = useRouter();
+
   const debouncedHandleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set("name", term);
+      router.replace(`/search?${params.toString()}`); // Redirect to search page with query
     } else {
-      params.delete("name");
+      router.push("/findjob"); // Redirect to findjob page if search term is empty
     }
-    replace(`/search?${params.toString()}`); // Redirect to search page with query
   }, 500);
 
   return (
