@@ -13,7 +13,7 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
     if (term) {
       params.set("name", term);
     } else {
-      params.delete("query");
+      params.delete("name");
     }
     replace(`/search?${params.toString()}`); // Redirect to search page with query
   }, 500);

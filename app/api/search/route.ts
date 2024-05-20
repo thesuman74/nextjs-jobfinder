@@ -1,25 +1,37 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+// app/api/search/route.ts
+import { NextRequest, NextResponse } from 'next/server';
 
-const items = [
-  { id: 1, name: 'John Doe', profession: 'Developer' },
-  { id: 2, name: 'Jane Smith', profession: 'Designer' },
-  { id: 3, name: 'Mike Johnson', profession: 'Manager' },
-];
+export async function GET(req: NextRequest) {
+  try {
+    const url = new URL(req.url);
+    const extractQuery = url.searchParams.get('query');
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { query } = req.query;
-  return "hello"
-  console.log("query",query)
+    // Handle case when query is null
+    if (!extractQuery) {
+      return NextResponse.json({
+        success: false,
+        message: 'Query parameter is missing',
+      });
+    }
+    const res = await fetch("http://localhost:8000/popularvacancies", {
+    next: { revalidate: 10 },
+  });
+  const popularVacanciesData = await res.json();
 
 
-//   if (typeof query !== 'string') {
-//     return res.status(400).json({ error: 'Invalid query parameter' });
-//   }
+    const searchResult = popularVacanciesData.filter((item: { name: string; }) =>
+      item.name.toLowerCase().includes(extractQuery.toLowerCase())
+    );
 
-//   const results = items.filter(item =>
-//     item.name.toLowerCase().includes(query.toLowerCase())
-
-//   );
-
-//   res.status(200).json(results);
+    return NextResponse.json({
+      success: true,
+      data: searchResult
+    });
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json({
+      success: false,
+      message: 'Something went wrong! Please try again'
+    });
+  }
 }
