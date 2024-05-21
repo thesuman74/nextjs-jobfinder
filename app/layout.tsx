@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/ui/header/navbar";
 import Footer from "@/components/ui/footer/footer";
 import { SearchBar } from "@/components/ui/header/searchbar";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <SearchBar />
-        {children}
-        <Footer />
+        <StoreProvider>
+          <NavBar />
+          <SearchBar placeholder={"Search Here"} />
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

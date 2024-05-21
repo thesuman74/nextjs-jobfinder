@@ -2,7 +2,7 @@ import Link from "next/link";
 import CreateNote from "./[id]/CreateNote";
 
 export default async function NotesPage() {
-  const res = await fetch("http://localhost:8001/users", {
+  const res = await fetch("http://localhost:8000/users", {
     next: { revalidate: 10 },
   });
   const data = await res.json();
